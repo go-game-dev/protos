@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package todo;
 
-option go_package = "github.com/go-game-dev/simple-todo;todo";
+option go_package = "github.com/go-game-dev/todo_gRPC;todo";
 
 message Task {
   int32 task_id = 1;
