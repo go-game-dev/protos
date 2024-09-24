@@ -4,13 +4,15 @@ package todo;
 
 option go_package = "github.com/go-game-dev/todo_gRPC;todo";
 
+import "google/protobuf/timestamp.proto";
+
 message Task {
   int32 task_id = 1;
   string title = 2;
   string body = 3;
   bool completed = 4;
-  reserved  5;
-  reserved  6;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
   reserved 7 to 10;
 }
 
@@ -39,8 +41,9 @@ message DeleteTaskResponse {
 }
 
 message ListTasksRequest {
-  int32 page = 1;
-  int32 page_size = 2;
+  bool completed = 1;
+  string sort_by = 2;
+  string order = 3;
 }
 
 message ListTasksResponse {
