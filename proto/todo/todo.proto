@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package todo;
 
-option go_package = "github.com/go-game-dev/todo_gRPC;todo";
+option go_package = "./todo";
 
 import "google/protobuf/timestamp.proto";
 
